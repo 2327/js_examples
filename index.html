@@ -1,0 +1,53 @@
+<html>
+<head>
+</head>
+<body>
+
+<!-- exercise 1 --!>
+<script>
+var Tc = 40;
+
+Tf = (9/5)*Tc + 32;
+alert(Tf);
+</script>
+
+
+<!-- exercise 2 --!>
+<script>
+z = 1000 + "108";
+alert(z);
+</script>
+
+
+<!-- exercise 3 --!>
+<script>
+name = "Василий";
+admin = name;
+
+alert(admin);
+</script>
+
+
+<!-- exercise 4 --!>
+<script>
+ex1 = 10 + 10 + "10";
+ex2 = 10 + "10" + 10;
+ex3 = 10 + 10 + + "10";
+ex4 = 10/-"";
+ex5 = 10/+"2,5";
+console.log(ex1);
+console.log(ex2);
+console.log(ex3);
+console.log(ex4);
+console.log(ex5);
+/* 
+1: int(10) + int(10) = int(20) + str(10) = 2010 Сложили 2 числа, а потом прибавили string и всё преобразовалось в string 
+2: int(10) + str(10) = str(1010) + int(10) = str(101010) Всё преобразовалось в string
+3: int(10) + int(10) + + str(10) = int(30) плюс превратит строку в число
+4: int(10)/ - "пустая строка"  = -infinity Отрицательная бесконечность. Из "ничего" можно вычесть "ничего"
+5: int(10)/ + str(2,5) = NaN К "ничего" нельзя прибавить что-то
+*/
+</script>
+
+</body>
+</html>

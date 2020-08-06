@@ -1,0 +1,47 @@
+<html>
+<title>
+</title>
+<body>
+
+<script>
+'use strict';
+
+let a = getNumber();
+let result = maturity(a);
+alert("Зачислено " + a + " " + result);
+
+
+function getNumber() {
+  let number = prompt("Сколько зачислить?");
+  number = Number(number);
+  if (isNaN(number)) {
+    alert("Введено неверное значение")
+    getNumber();
+  }
+  
+  return number;
+}
+
+
+function maturity(a) {
+/*
+  lastSymbol = a.charAt(str.length-1);
+*/
+  a = String(a);
+  let lastSymbol = a.slice(-1);
+  lastSymbol = Number(lastSymbol);
+  if (lastSymbol == 1) {
+      lastSymbol = "рубль";
+  } else if (lastSymbol > 1 && lastSymbol < 5) {
+      lastSymbol = "рубля";
+  } else {
+      lastSymbol = "рублей";
+  }  
+
+  return(lastSymbol);
+}
+
+</script>
+
+</body>
+</html>

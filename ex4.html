@@ -1,0 +1,57 @@
+<html>
+<title>
+</title>
+<body>
+
+<script>
+'use strict';
+
+let a = getNumber();
+let b = getNumber();
+
+let result = res_sum(a,b)
+alert("Сумма: " + result);
+result = res_diff(a,b)
+alert("Разность: " + result);
+result = res_dev(a,b)
+alert("Деление: " + result);
+result = res_mul(a,b)
+alert("Умножение: " + result);
+
+
+function getNumber() {
+  let number = prompt("Введите число");
+  number = Number(number);
+  if (isNaN(number)) {
+    alert("Введено неверное значение")
+    throw new Error("Введено неверное значение");
+  }
+  return number;
+}
+
+
+function res_sum(a,b) {
+  return a + b;
+}
+
+function res_diff(a,b) {
+  return a - b;
+}
+
+function res_dev(a,b) {
+  if (b == 0) {
+    alert("Делить на ноль нелья");
+  } else {
+    return a / b;
+  }
+}
+
+function res_mul(a,b) {
+  return a * b;
+}
+
+</script>
+
+</body>
+</html>
+

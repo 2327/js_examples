@@ -1,0 +1,65 @@
+<html>
+<title>
+</title>
+<body>
+
+<script>
+'use strict';
+
+let a = getNumber();
+let b = getNumber();
+let o = getOperand();
+
+mathoperation(a,b,o);
+
+function getNumber() {
+  let number = prompt("Введите число");
+  number = Number(number);
+  if (isNaN(number)) {
+    alert("Введено неверное значение")
+    throw new Error("Введено неверное значение");
+  }
+  return number;
+}
+
+function getOperand() {
+  let operand = prompt("Введите действие");
+  if (operand == "*" || operand == "-" || operand == "+" || operand == "/" || operand == "\\") {
+    return operand;
+  } else {
+    getOperand(); 
+  }
+}
+
+function mathoperation(a,b,o) {
+  let result;
+ 
+  switch(o) {
+    case "+":
+      result =  a + b;
+      alert("Сумма: " + result);
+      break;
+    case "-":
+      result =  a - b;
+      alert("Разность: " + result);
+      break;
+    case "/":
+    case "\\":
+      result =  a / b;
+      alert("Деление: " + result);
+      break;
+    case "*":
+      result =  a * b;
+      alert("Умножение: " + result);  
+      break;
+  default:
+      alert("Как ты сюда попал? :)")
+      break;
+}
+}
+
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<title></title>
+<meta charset="utf-8"/>
+<body>
+
+<script>
+'use strict';
+
+for (let i=0; i < 4; i++) {
+    console.log("Простое число: " + i);
+}
+
+for (let i=4; i <= 100; i++) {
+    if (i % 2 != 0) {
+        let delim = 2;
+        while ( delim * delim <= i && i % delim != 0) {
+            console.log("Простое число: " + i);
+            delim += 2;
+        }
+    }
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<title></title>
+<meta charset="utf-8"/>
+<body>
+<script>
+'use strict';
+
+function product(name, price) {
+    this.name = name;
+    this.price = price;
+}
+
+product.prototype.dis25 = function () {
+    this.price = this.price - this.price * 0.25;
+};
+
+let product1 = new product('product1', 100);
+product1.dis25();
+
+console.log(product1);
+</script>
+</body>
+</html>

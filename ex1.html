@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<title></title>
+<meta charset="utf-8"/>
+<body>
+<script>
+'use strict';
+
+let total = {
+    units: 0,
+    tens: 0,
+    hundreds: 0,
+}
+
+let n = getNumber();
+find();
+
+function getNumber() {
+  let number = prompt("Введите число");
+  number = Number(number);
+  if (isNaN(number) || number < 0 || number > 999) {
+      total = {};
+      shower();
+      throw new Error("Введено неверное значение");
+  }
+  return number;
+}
+
+function find() {
+    /*
+    Определяем разрядность числа посредство количества символов и итерационно вызываем функцию деления.
+    */
+    n = String(n);
+
+    /*
+    Альтернативное решение через if
+    if (n.length == 3) {
+      alert("3");
+    } else if (n.length == 2) {
+      alert("2");
+    } else if (n.length == 1) {
+      alert("1");
+    }
+    */
+
+    if (0 < n.length && n.length <= 3) {
+        switch(n.length) {
+        case 3:
+            total.hundreds = delim(2);
+            find();
+            break;
+        case 2:
+            total.tens = delim(1);
+            find();
+            break;
+        case 1:
+            total.units = n;
+            shower();
+            break;
+        default:
+          alert("Как ты сюда попал? :)");
+          break;
+        }
+    } else {
+        total = {};
+        shower();
+
+    }
+}
+
+function delim(q) {
+/*
+Рассчитываем делитель в зависимости от длины числа, вычисленной в родительской фукции.
+Назначаем новое значение n.
+*/
+    let delimiter = "0".repeat(q)
+    delimiter = "1" + delimiter;
+    let result = ( n - n%delimiter) / delimiter;
+    n = n % delimiter;
+    return(result);
+}
+
+function shower() {
+    console.log(total);
+}
+
+</script>
+</body>
+</html>

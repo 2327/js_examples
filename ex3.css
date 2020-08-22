@@ -1,0 +1,29 @@
+.window {
+    width: 100px;
+    border: 1px;
+    padding: 10px;
+    background: #ccccc;
+    position: fixed;
+    top: 50px;
+    left: 10px;
+    box-shadow: 0 0 10px gray;
+}
+
+.hidden {
+    display: none;
+}
+
+#cls {
+    border-radius: 50%;
+    background-color: gray;
+    font-size: 34px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: -15px;
+    top: -15px;
+    position: absolute;
+}
+

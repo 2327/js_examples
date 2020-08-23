@@ -1,0 +1,10 @@
+img {
+    weight: 100px;
+    height: 100px;
+    display: block;
+}
+
+.cell {
+    padding: 10px;
+    float:left;
+}

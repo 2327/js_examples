@@ -62,3 +62,4 @@ function showMoreText(card) {
     card.productName.insertAdjacentHTML('afterend', `<div class="desc">${text}</div>`);
     card.button.innerText = 'Back';
 }
+

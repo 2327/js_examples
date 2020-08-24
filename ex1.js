@@ -1,6 +1,7 @@
 'use strict';
 
 const buttons = document.querySelectorAll('button');
+const buttons
 console.log(buttons);
 
 buttons.forEach(function (button) {
@@ -9,11 +10,6 @@ buttons.forEach(function (button) {
     })
 });
 
-/**
- * Функция обрабатывает клик по кнопке в карточке товара и попеременно вызывает
- * функции для показа или скрытия текста о товаре.
- * @param {MouseEvent} clickedButtonEvent
- */
 function handleClick(clickedButtonEvent) {
     const cardNode = clickedButtonEvent.target.parentNode;
     console.log(cardNode);

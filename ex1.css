@@ -1,5 +1,6 @@
 .slider {
   max-width: 300px;
+  max-height: 300px;
   position: relative;
   margin: auto;
 }

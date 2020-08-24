@@ -11,10 +11,10 @@ buttons.forEach(function (button) {
 });
 
 function handleClick(clickedButtonEvent) {
-    const currentButton = clickedButtonEvent.target.parentNode;
+    const currentButton = clickedButtonEvent.target;
     console.log(currentButton);
 
-    let id = currentButton.dataset.id;
+    let id = currentButton.getAttribute('data-id');
     console.log(id);
 }
 

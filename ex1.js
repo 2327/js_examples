@@ -1,0 +1,61 @@
+'use strict';
+
+const buttons = document.querySelectorAll('button');
+const buttons
+console.log(buttons);
+
+buttons.forEach(function (button) {
+    button.addEventListener('click', function (event) {
+        handleClick(event);
+    })
+});
+
+function handleClick(clickedButtonEvent) {
+    const cardNode = clickedButtonEvent.target.parentNode;
+    console.log(cardNode);
+
+    const card = {
+        wrap: cardNode,
+        img: cardNode.querySelector('img'),
+        productName: cardNode.querySelector('.ProductName'),
+        button: cardNode.querySelector('button'),
+    };
+
+    const textOnButton = card.button.innerText;
+    if (textOnButton === 'Details') {
+        showMoreText(card);
+    } else if (textOnButton === 'Back') {
+        hideMoreText(card);
+    }
+}
+
+/**
+ * Функция скрывает текст с описанием товара.
+ * @param {Object} card
+ * @param {HTMLDivElement} card.wrap
+ * @param {HTMLImageElement} card.img
+ * @param {HTMLDivElement} card.productName
+ * @param {HTMLButtonElement} card.button
+ */
+function hideMoreText(card) {
+    card.img.style.display = 'block';
+    card.wrap.querySelector('.desc').remove();
+    card.button.innerText = 'Details';
+}
+
+/**
+ * Функция показывает текст с описанием товара.
+ * @param {Object} card
+ * @param {HTMLDivElement} card.wrap
+ * @param {HTMLImageElement} card.img
+ * @param {HTMLDivElement} card.productName
+ * @param {HTMLButtonElement} card.button
+ */
+function showMoreText(card) {
+    console.log(card);
+    card.img.style.display = 'none';
+    const text = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.';
+    card.productName.insertAdjacentHTML('afterend', `<div class="desc">${text}</div>`);
+    card.button.innerText = 'Back';
+}
+

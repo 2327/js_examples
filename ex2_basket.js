@@ -16,23 +16,22 @@ function handleClick(clickedButtonEvent) {
     let id = currentButton.getAttribute('data-id')
     let quantity;
     let additionProduct = basket.filter(el => el.id === id);
-    console.log('0: ' + additionProduct);
+    console.log('0: ' + JSON.stringify(additionProduct));
 
-    if (additionProduct.length != 0) {
-        quantity = additionProduct.quantity;
-        console.log(typeof(quantity));
-        console.log(quantity);
+    if (additionProduct.length > 1) {
+        console.log("error!!");
+    } else if (additionProduct.length === 1) {
+        quantity = additionProduct[0].quantity;
         quantity = quantity + 1;
-        console.log(quantity);
+        additionProduct[0].quantity = quantity;
     } else {
         quantity = 1;
+        basket.push({
+            id: currentButton.getAttribute('data-id'),
+            price: currentButton.getAttribute('data-price'),
+            name: currentButton.getAttribute('data-name'),
+            quantity: quantity});
     }
-
-    basket.push({
-        id: currentButton.getAttribute('data-id'),
-        price: currentButton.getAttribute('data-price'),
-        name: currentButton.getAttribute('data-name'),
-        quantity: quantity});
 
     console.log(basket);
 }

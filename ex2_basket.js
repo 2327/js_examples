@@ -16,8 +16,8 @@ BasketBtn.addEventListener('click', function(event) {
 });
 
 function handleClickBasketBtn(clickedButtonEvent) {
+    TotalTable.innerHTML = "";
     basket.forEach(function(product) {
-    console.log(basket);
        console.log(product.id + product.name + product.quantity + product.price);
        TotalTable.insertRow().innerHTML =
            "<td>" +product.id+ "</td>"+
